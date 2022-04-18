@@ -21,9 +21,6 @@ class profile::base {
   package {'vim':
     ensure => present,
   }
-  package {'htop':
-    ensure => present,
-  }
   package {'openssh':
     ensure => present,
   }
