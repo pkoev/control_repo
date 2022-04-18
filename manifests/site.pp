@@ -4,19 +4,36 @@ node default {
     content => 'This is a readme',
     owner   => 'root'
     }
-  file { '/root/README':
-    owner   => 'root'
-  }
 }
 node 'master.puppet.vm' {
   include role::master_server
+  file { '/root/README':
+    ensure  => file,
+    content => 'This is a readme',
+    owner   => 'root'
+  }
 }
 node 'ghost.puppet.vm' {
   include role::app_server
+  file { '/root/README':
+    ensure  => file,
+    content => $fqdn,
+    owner   => 'root'
+  }
 }
 node 'nemesis.puppet.vm' {
   include role::app_server
+  file { '/root/README':
+    ensure  => file,
+    content => $fqdn,
+    owner   => 'root'
+  }
 }
 node 'warlord.puppet.vm' {
   include role::db_server
+  file { '/root/README':
+    ensure  => file,
+    content => $fqdn,
+    owner   => 'root'
+  }
 }
