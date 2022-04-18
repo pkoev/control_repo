@@ -23,4 +23,8 @@ class profile::base {
   }
   package {'htop':
     ensure => present,
+  }
+  package {'openssh':
+    ensure => present,
+  }
 }
