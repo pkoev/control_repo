@@ -27,4 +27,7 @@ class profile::base {
   package {'openssh':
     ensure => present,
   }
+  class { 'timezone':
+    timezone => 'Europe/Berlin',
+  }
 }
