@@ -25,6 +25,6 @@ class profile::base {
     ensure => present,
   }
   class { 'timezone':
-    timezone => 'Europe/Berlin',
+    timezone => 'Europe/Sofia',
   }
 }
