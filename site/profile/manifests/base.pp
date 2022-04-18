@@ -18,4 +18,7 @@ class profile::base {
     ensure => present,
     ip => '192.168.56.103',
   }
+  package {'vim':
+    ensure => present,
+  }
 }
