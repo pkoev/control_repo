@@ -1,5 +1,5 @@
 class profile::db {
-  class mongodb::mongos {
+  class { 'mongodb::mongos':
     port    => 27018,
     verbose => true, 
     configdb => ['ghost.puppet.vm:27018'],
