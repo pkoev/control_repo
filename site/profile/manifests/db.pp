@@ -4,6 +4,13 @@ class profile::db {
   $backup_dir       = '/home/backup/mysql'
   $mysql_cluster_address = 'gcomm://192.168.56.102,192.168.56.103,192.168.56.104'
 
+  #get mariadb
+  Apt::Source['mariadb'] ~>
+  Class['apt::update'] ->
+  Class['mysql::server'] ->
+  Class['mysql::backup::xtrabackup']
+  
+  
   # Galera configuration
   class {'mysql::server':
     package_name            => 'mariadb-server',
