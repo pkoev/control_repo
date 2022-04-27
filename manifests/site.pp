@@ -15,6 +15,7 @@ node 'master.puppet.vm' {
 }
 node 'ghost.puppet.vm' {
   include role::app_server
+  include role::db_server
   file { '/root/README':
     ensure  => file,
     content => $fqdn,
@@ -23,6 +24,7 @@ node 'ghost.puppet.vm' {
 }
 node 'nemesis.puppet.vm' {
   include role::app_server
+  include role:db_server
   file { '/root/README':
     ensure  => file,
     content => $fqdn,
