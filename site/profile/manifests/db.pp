@@ -23,7 +23,7 @@ class profile::db {
         'wsrep_cluster_name'      => 'galera_cluster',
         'wsrep_cluster_address'   => $mysql_cluster_address,
         'log-error'               => '/var/log/mysql/error.log',
-        'wsrep_node_address'      => $facts['networking']['interfaces']['enp0s8']['ip'],
+        'wsrep_node_address'      => $facts['networking']['interfaces']['eth1']['ip'],
         'wsrep_node_name'         => $hostname,
         'innodb_buffer_pool_size' => '512M',
         'wsrep_sst_method'        => 'mariabackup',
