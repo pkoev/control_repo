@@ -8,7 +8,7 @@ class profile::db {
   Class['apt::update'] ->
   Class['mysql::server'] ->
   Class['mysql::backup::xtrabackup']
-  
+  include mysql
   
   # Galera configuration
   class {'mysql::server':
