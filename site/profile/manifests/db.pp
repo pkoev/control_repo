@@ -5,7 +5,6 @@ class profile::db {
   $mysql_cluster_address = 'gcomm://192.168.56.102,192.168.56.103,192.168.56.104'
 
   #get mariadb
-  Apt::Source['mariadb'] ~>
   Class['apt::update'] ->
   Class['mysql::server'] ->
   Class['mysql::backup::xtrabackup']
