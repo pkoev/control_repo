@@ -1,11 +1,6 @@
 class profile::db {
-  class { 'mongodb::mongos':
-    port    => 27018,
-    verbose => true, 
-    configdb => ['ghost.puppet.vm:27018'],
-    create_admin => true,
-    admin_username => 'tadmin',
-    admin_password => 'tpass',
-    ensure => present,
-  } 
+  $sst_user         = 'sstuser'
+  $sst_password     = 'S3cr333t$'
+  $backup_dir       = '/home/backup/mysql'
+  $mysql_cluster_address = 'gcomm://192.168.56.102,192.168.56.103,192.168.56.104'
 }
