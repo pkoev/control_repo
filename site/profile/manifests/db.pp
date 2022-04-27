@@ -8,7 +8,7 @@ class profile::db {
   class {'mysql::server':
     package_name            => 'mariadb-server',
     root_password           => 'q1w2e3!@#',
-    service_name            => 'mysql',
+    service_name            => 'mariadb',
     create_root_my_cnf      => true,
     remove_default_accounts => true,
     manage_config_file      => true,
@@ -30,7 +30,7 @@ class profile::db {
         'wsrep_sst_auth'          => "${sst_user}:${sst_password}"
       },
       'mysqld_safe' => {
-        'log-error'               => '/var/log/mysql/error.log'
+        'log-error'               => '/var/log/mariadb/error.log'
       }
     }
   }
