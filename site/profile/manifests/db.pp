@@ -22,7 +22,7 @@ class profile::db {
         'wsrep_provider_options'  => 'gcache.size=1G',
         'wsrep_cluster_name'      => 'galera_cluster',
         'wsrep_cluster_address'   => $mysql_cluster_address,
-        'log-error'               => '/var/log/mysql/error.log',
+        'log-error'               => '/var/log/mariadb/error.log',
         'wsrep_node_address'      => $facts['networking']['interfaces']['eth1']['ip'],
         'wsrep_node_name'         => $hostname,
         'innodb_buffer_pool_size' => '512M',
