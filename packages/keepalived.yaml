@@ -1,0 +1,7 @@
+- name: keepalived
+  version: 
+    major: '2'
+    minor: '2.2'
+  updated: true
+  type: 'git'
+  path: 'https://github.com/acassen/keepalived'
